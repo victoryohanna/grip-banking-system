@@ -1,7 +1,7 @@
 // Require dependencies
 const express = require("express");
 const bodyparser = require("body-parser");
-const path = require("path");   
+const path = require("path");
 const cors = require("cors");
 const dbInit = require("./config/db");
 const { success, error } = require("consola");
@@ -10,7 +10,8 @@ const { success, error } = require("consola");
 const app = express();
 
 //import environment variables
-require("dotenv").config();
+//require("dotenv").config();
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
 const port = process.env.PORT || 4000;
 
 //DB connection method
