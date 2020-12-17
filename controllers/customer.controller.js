@@ -6,7 +6,7 @@ const addCustomer = (req, res) => {
   Customer.findOne({ email: req.body.email }, (err, response) => {
     if (err) {
       res.status(500).json({
-        message: "Error found",
+        message: "Error found",    
       });
     }
 
